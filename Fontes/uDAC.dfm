@@ -76,7 +76,6 @@ object fDAC: TfDAC
     ResourceOptions.SilentMode = True
     UpdateOptions.AssignedValues = [uvCheckRequired]
     UpdateOptions.CheckRequired = False
-    AutoCommitUpdates = False
     Left = 168
     Top = 152
   end

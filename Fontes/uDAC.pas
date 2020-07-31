@@ -170,6 +170,7 @@ begin
   FDConnection.Params.Add('SqlDialect=' + dialeto);
   FDConnection.Params.Add('CharacterSet=' + charSet);
   FDConnection.Params.Add('VendorLibWin32=' + biblioteca);
+//  FDConnection.Params.Add('VendorLibWin32=' + ExtractFilePath(GetCurrentDir)+'\fbclient.dll');
   FDConnection.Params.Add('ExtendedMetadata=True');
 
   if porta = '' then

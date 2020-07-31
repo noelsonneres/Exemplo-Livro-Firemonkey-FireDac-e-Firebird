@@ -328,6 +328,8 @@ inherited fRestore: TfRestore
     TabOrder = 4
     object MemoLog: TMemo
       Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      ReadOnly = True
       Align = Client
       Margins.Left = 2.000000000000000000
       Margins.Top = 2.000000000000000000
@@ -337,7 +339,8 @@ inherited fRestore: TfRestore
       Size.Height = 79.000000000000000000
       Size.PlatformDefault = False
       TabOrder = 0
-      ReadOnly = True
+      Viewport.Width = 564.000000000000000000
+      Viewport.Height = 79.000000000000000000
     end
   end
   object FDIBRestore: TFDIBRestore

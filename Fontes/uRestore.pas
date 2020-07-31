@@ -10,7 +10,8 @@ uses
   System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.Components,
   Data.Bind.DBScope, Data.Bind.Grid, FireDAC.Comp.Client, FMX.Memo, FMX.Edit,
   FMX.Controls.Presentation, FireDAC.Phys.IBWrapper, FireDAC.Stan.Def,
-  FireDAC.Phys.IBBase, FireDAC.Stan.Intf, FireDAC.Phys;
+  FireDAC.Phys.IBBase, FireDAC.Stan.Intf, FireDAC.Phys, FireDAC.FMXUI.Wait,
+  FMX.ScrollBox;
 
 type
   TfRestore = class(TfxForm)
@@ -149,8 +150,8 @@ begin
   if chkUseAllSpace.IsChecked = True then
     Opcoes := Opcoes + [roUseAllSpace];
 
-  if chkCreateNewDB.IsChecked = True then
-    Opcoes := Opcoes + [roCreate];
+//  if chkCreateNewDB.IsChecked = True then
+//    Opcoes := Opcoes + [roCreate];
 
   if chkNoValidityCheck.IsChecked = True then
     Opcoes := Opcoes + [roNoValidity];
