@@ -1,0 +1,1040 @@
+inherited fTabela: TfTabela
+  Caption = 'Consultar Tabelas'
+  ClientHeight = 350
+  DesignerMasterStyle = 0
+  object pnlTabelas: TPanel
+    Align = Top
+    Position.Y = 25.000000000000000000
+    Size.Width = 568.000000000000000000
+    Size.Height = 31.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Label2: TLabel
+      Position.X = 10.000000000000000000
+      Position.Y = 6.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Tabelas'
+    end
+    object cbTabelas: TComboBox
+      ItemIndex = 0
+      ItemHeight = 15.000000000000000000
+      Placement = Right
+      Position.X = 58.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 200.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      OnChange = cbTabelasChange
+    end
+    object chkAbrirTabela: TCheckBox
+      Position.X = 264.000000000000000000
+      Position.Y = 6.000000000000000000
+      Size.Width = 175.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Abrir tabela ao selecionar'
+      OnChange = chkAbrirTabelaChange
+    end
+  end
+  object TabControlDados: TTabControl
+    Align = Client
+    Size.Width = 568.000000000000000000
+    Size.Height = 294.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 0
+    TabOrder = 1
+    TabPosition = PlatformDefault
+    OnChange = TabControlDadosChange
+    object tabDados: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 54.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Dados'
+      object grdDados: TGrid
+        Align = Client
+        Margins.Left = 4.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Size.Width = 560.000000000000000000
+        Size.Height = 170.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        RowCount = 100
+        RowHeight = 18.000000000000000000
+        OnHeaderClick = grdDadosHeaderClick
+      end
+      object pnlNavegacao: TPanel
+        Align = Bottom
+        Position.Y = 248.000000000000000000
+        Size.Width = 568.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object BindNavigator: TBindNavigator
+          Align = Right
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Position.X = 325.000000000000000000
+          Position.Y = 2.000000000000000000
+          Size.Width = 241.000000000000000000
+          Size.Height = 18.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          DataSource = BindSourceDBDados
+          xRadius = 4.000000000000000000
+          yRadius = 4.000000000000000000
+        end
+      end
+      object ToolBar2: TToolBar
+        Size.Width = 568.000000000000000000
+        Size.Height = 25.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object btnAbrir: TButton
+          Align = Left
+          CanFocus = False
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Position.X = 2.000000000000000000
+          Position.Y = 2.000000000000000000
+          Size.Width = 60.000000000000000000
+          Size.Height = 21.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 7
+          Text = 'Abrir'
+          OnClick = btnAbrirClick
+        end
+        object btnFechar: TButton
+          Align = Left
+          CanFocus = False
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Position.X = 64.000000000000000000
+          Position.Y = 2.000000000000000000
+          Size.Width = 60.000000000000000000
+          Size.Height = 21.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Fechar'
+          OnClick = btnFecharClick
+        end
+        object btnOrdenar: TButton
+          Align = Left
+          CanFocus = False
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Position.X = 126.000000000000000000
+          Position.Y = 2.000000000000000000
+          Size.Width = 60.000000000000000000
+          Size.Height = 21.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'Ordenar'
+          OnClick = btnOrdenarClick
+        end
+        object btnCommit: TButton
+          Align = Left
+          CanFocus = False
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Position.X = 188.000000000000000000
+          Position.Y = 2.000000000000000000
+          Size.Width = 60.000000000000000000
+          Size.Height = 21.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 4
+          Text = 'Commit'
+          OnClick = btnCommitClick
+        end
+        object btnRollback: TButton
+          Align = Left
+          CanFocus = False
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Position.X = 250.000000000000000000
+          Position.Y = 2.000000000000000000
+          Size.Width = 60.000000000000000000
+          Size.Height = 21.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'Rollback'
+          OnClick = btnRollbackClick
+        end
+      end
+      object pnlPesquisa: TPanel
+        Align = Top
+        Position.Y = 25.000000000000000000
+        Size.Width = 568.000000000000000000
+        Size.Height = 45.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        object Label1: TLabel
+          Position.X = 4.000000000000000000
+          Position.Y = 2.000000000000000000
+          Size.Width = 77.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Pesquisar por'
+        end
+        object edField: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          TabOrder = 1
+          Position.X = 4.000000000000000000
+          Position.Y = 20.000000000000000000
+          Size.Width = 250.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
+          OnKeyDown = edFieldKeyDown
+        end
+        object lbField: TLabel
+          Position.X = 80.000000000000000000
+          Position.Y = 2.000000000000000000
+          Size.Width = 249.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          Text = '?'
+        end
+        object Label7: TLabel
+          Position.X = 256.000000000000000000
+          Position.Y = 21.000000000000000000
+          Size.Width = 252.000000000000000000
+          Size.Height = 17.000000000000000000
+          Size.PlatformDefault = False
+          Text = '<-- Tecle <ENTER> ap'#243's digitar o argumento'
+        end
+      end
+    end
+    object tabPropriedades: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 90.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Propriedades'
+      object tabControlPropriedades: TTabControl
+        Align = Client
+        Margins.Left = 4.000000000000000000
+        Margins.Top = 4.000000000000000000
+        Margins.Right = 4.000000000000000000
+        Margins.Bottom = 4.000000000000000000
+        Size.Width = 560.000000000000000000
+        Size.Height = 262.000000000000000000
+        Size.PlatformDefault = False
+        TabIndex = 2
+        TabOrder = 0
+        TabPosition = PlatformDefault
+        OnChange = tabControlPropriedadesChange
+        object tabColunas: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 62.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Colunas'
+          object grdColunas: TGrid
+            Align = Client
+            Size.Width = 560.000000000000000000
+            Size.Height = 238.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            RowCount = 100
+            RowHeight = 18.000000000000000000
+          end
+        end
+        object tabIndices: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 57.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = #205'ndices'
+          object SplitterIndices: TSplitter
+            Align = Bottom
+            Cursor = crVSplit
+            MinSize = 20.000000000000000000
+            Position.Y = 85.000000000000000000
+            Size.Width = 560.000000000000000000
+            Size.Height = 3.000000000000000000
+            Size.PlatformDefault = False
+          end
+          object pnlGrdIndices: TPanel
+            Align = Client
+            Size.Width = 560.000000000000000000
+            Size.Height = 85.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object grdIndices: TGrid
+              Align = Client
+              Margins.Left = 4.000000000000000000
+              Margins.Top = 4.000000000000000000
+              Margins.Right = 4.000000000000000000
+              Size.Width = 552.000000000000000000
+              Size.Height = 81.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              RowCount = 100
+              RowHeight = 18.000000000000000000
+            end
+          end
+          object pnlGrdColunasIndice: TPanel
+            Align = Bottom
+            Position.Y = 88.000000000000000000
+            Size.Width = 560.000000000000000000
+            Size.Height = 150.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object pnlNomeIndice: TPanel
+              Align = Top
+              Margins.Left = 4.000000000000000000
+              Margins.Right = 4.000000000000000000
+              Position.X = 4.000000000000000000
+              Size.Width = 552.000000000000000000
+              Size.Height = 20.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              object Label3: TLabel
+                Position.X = 10.000000000000000000
+                Position.Y = 1.000000000000000000
+                Text = 'Colunas'
+              end
+            end
+            object grdColunasIndice: TGrid
+              Align = Client
+              Margins.Left = 4.000000000000000000
+              Margins.Right = 4.000000000000000000
+              Margins.Bottom = 4.000000000000000000
+              Size.Width = 552.000000000000000000
+              Size.Height = 126.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              RowCount = 100
+              RowHeight = 18.000000000000000000
+            end
+          end
+        end
+        object tabRestricoesUnique: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = True
+          Size.Width = 115.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Restri'#231#245'es Unique'
+          object Panel7: TPanel
+            Align = Bottom
+            Position.Y = 88.000000000000000000
+            Size.Width = 560.000000000000000000
+            Size.Height = 150.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object Panel8: TPanel
+              Align = Top
+              Margins.Left = 4.000000000000000000
+              Margins.Right = 4.000000000000000000
+              Position.X = 4.000000000000000000
+              Size.Width = 552.000000000000000000
+              Size.Height = 20.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              object Label4: TLabel
+                Position.X = 10.000000000000000000
+                Position.Y = 1.000000000000000000
+                Text = 'Colunas'
+              end
+            end
+            object grdColunasRestricaoUnique: TGrid
+              Align = Client
+              Margins.Left = 4.000000000000000000
+              Margins.Right = 4.000000000000000000
+              Margins.Bottom = 4.000000000000000000
+              Size.Width = 552.000000000000000000
+              Size.Height = 126.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+              RowCount = 100
+              RowHeight = 18.000000000000000000
+            end
+          end
+          object Splitter3: TSplitter
+            Align = Bottom
+            Cursor = crVSplit
+            MinSize = 20.000000000000000000
+            Position.Y = 85.000000000000000000
+            Size.Width = 560.000000000000000000
+            Size.Height = 3.000000000000000000
+            Size.PlatformDefault = False
+          end
+          object Panel9: TPanel
+            Align = Client
+            Size.Width = 560.000000000000000000
+            Size.Height = 85.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object grdRestricoesUnique: TGrid
+              Align = Client
+              Margins.Left = 4.000000000000000000
+              Margins.Top = 4.000000000000000000
+              Margins.Right = 4.000000000000000000
+              Size.Width = 552.000000000000000000
+              Size.Height = 81.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              RowCount = 100
+              RowHeight = 18.000000000000000000
+            end
+          end
+        end
+        object tabRestricoesCheck: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 109.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Restri'#231#245'es Check'
+          object Panel10: TPanel
+            Align = Client
+            Size.Width = 560.000000000000000000
+            Size.Height = 85.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            object grdRestricoesCheck: TGrid
+              Align = Client
+              Margins.Left = 4.000000000000000000
+              Margins.Top = 4.000000000000000000
+              Margins.Right = 4.000000000000000000
+              Size.Width = 552.000000000000000000
+              Size.Height = 81.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              RowCount = 100
+              RowHeight = 18.000000000000000000
+            end
+          end
+          object Splitter2: TSplitter
+            Align = Bottom
+            Cursor = crVSplit
+            MinSize = 20.000000000000000000
+            Position.Y = 85.000000000000000000
+            Size.Width = 560.000000000000000000
+            Size.Height = 3.000000000000000000
+            Size.PlatformDefault = False
+          end
+          object Panel11: TPanel
+            Align = Bottom
+            Position.Y = 88.000000000000000000
+            Size.Width = 560.000000000000000000
+            Size.Height = 150.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object Panel12: TPanel
+              Align = Top
+              Margins.Left = 4.000000000000000000
+              Margins.Right = 4.000000000000000000
+              Position.X = 4.000000000000000000
+              Size.Width = 552.000000000000000000
+              Size.Height = 20.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              object Label5: TLabel
+                Position.X = 10.000000000000000000
+                Position.Y = 1.000000000000000000
+                Text = 'DDL'
+              end
+            end
+            object MemoDDLRestricaoCheck: TMemo
+              Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+              Align = Client
+              Margins.Left = 4.000000000000000000
+              Margins.Right = 4.000000000000000000
+              Margins.Bottom = 4.000000000000000000
+              Size.Width = 552.000000000000000000
+              Size.Height = 126.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+            end
+          end
+        end
+        object tabIntegridadeReferencial: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 81.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Integridade'
+          object grdIntegridadeReferencial: TGrid
+            Align = Client
+            Margins.Left = 4.000000000000000000
+            Margins.Top = 4.000000000000000000
+            Margins.Right = 4.000000000000000000
+            Margins.Bottom = 4.000000000000000000
+            Size.Width = 552.000000000000000000
+            Size.Height = 230.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            RowCount = 100
+            RowHeight = 18.000000000000000000
+          end
+        end
+        object tabGatilhos: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 63.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Gatilhos'
+          object Splitter4: TSplitter
+            Align = Bottom
+            Cursor = crVSplit
+            MinSize = 20.000000000000000000
+            Position.Y = 85.000000000000000000
+            Size.Width = 560.000000000000000000
+            Size.Height = 3.000000000000000000
+            Size.PlatformDefault = False
+          end
+          object grdGatilhos: TGrid
+            Align = Client
+            Margins.Left = 4.000000000000000000
+            Margins.Top = 4.000000000000000000
+            Margins.Right = 4.000000000000000000
+            Size.Width = 552.000000000000000000
+            Size.Height = 81.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            RowCount = 100
+            RowHeight = 18.000000000000000000
+          end
+          object pnlDDLGatilho: TPanel
+            Align = Bottom
+            Position.Y = 88.000000000000000000
+            Size.Width = 560.000000000000000000
+            Size.Height = 150.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            object pnlNomeGatilho: TPanel
+              Align = Top
+              Margins.Left = 4.000000000000000000
+              Margins.Right = 4.000000000000000000
+              Position.X = 4.000000000000000000
+              Size.Width = 552.000000000000000000
+              Size.Height = 20.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 0
+              object Label6: TLabel
+                Position.X = 10.000000000000000000
+                Position.Y = 1.000000000000000000
+                Text = 'DDL'
+              end
+            end
+            object MemoDDLGatilho: TMemo
+              Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+              Align = Client
+              Margins.Left = 4.000000000000000000
+              Margins.Right = 4.000000000000000000
+              Margins.Bottom = 4.000000000000000000
+              Size.Width = 552.000000000000000000
+              Size.Height = 126.000000000000000000
+              Size.PlatformDefault = False
+              TabOrder = 1
+            end
+          end
+        end
+        object tabPrivilegios: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 74.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Privil'#233'gios'
+          object grdPrivilegios: TGrid
+            Align = Client
+            Margins.Left = 4.000000000000000000
+            Margins.Top = 4.000000000000000000
+            Margins.Right = 4.000000000000000000
+            Margins.Bottom = 4.000000000000000000
+            Size.Width = 552.000000000000000000
+            Size.Height = 230.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            RowCount = 100
+            RowHeight = 18.000000000000000000
+          end
+        end
+        object tabDDL: TTabItem
+          CustomIcon = <
+            item
+            end>
+          IsSelected = False
+          Size.Width = 43.000000000000000000
+          Size.Height = 24.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'DDL'
+          object MemoDDLTabela: TMemo
+            Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+            Align = Client
+            Margins.Left = 4.000000000000000000
+            Margins.Top = 4.000000000000000000
+            Margins.Right = 4.000000000000000000
+            Margins.Bottom = 4.000000000000000000
+            Size.Width = 552.000000000000000000
+            Size.Height = 230.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            StyledSettings = [Family, Style, FontColor]
+          end
+        end
+      end
+    end
+  end
+  object ToolBar: TToolBar
+    Align = MostTop
+    Size.Width = 568.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object btnSair: TButton
+      Align = Left
+      CanFocus = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Sair'
+      OnClick = btnSairClick
+    end
+    object btnCriar: TButton
+      Align = Left
+      CanFocus = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 84.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Criar (1)'
+      OnClick = btnCriarClick
+    end
+    object btnCriar2: TButton
+      Align = Left
+      CanFocus = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 166.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Criar (2)'
+      OnClick = btnCriar2Click
+    end
+  end
+  object BindSourceDBColunas: TBindSourceDB
+    DataSet = cdsColunas
+    ScopeMappings = <>
+    Left = 69
+    Top = 194
+  end
+  object BindSourceDBIndices: TBindSourceDB
+    DataSet = cdsIndices
+    ScopeMappings = <>
+    Left = 98
+    Top = 194
+  end
+  object BindSourceDBColunasIndice: TBindSourceDB
+    DataSet = cdsColunasIndice
+    ScopeMappings = <>
+    Left = 98
+    Top = 223
+  end
+  object BindSourceDBRestricoesUnique: TBindSourceDB
+    DataSet = cdsRestricoesUnique
+    ScopeMappings = <>
+    Left = 127
+    Top = 194
+  end
+  object BindSourceDBColunasRestricaoUnique: TBindSourceDB
+    DataSet = cdsColunasRestricaoUnique
+    ScopeMappings = <>
+    Left = 128
+    Top = 223
+  end
+  object BindSourceDBRestricoesCheck: TBindSourceDB
+    DataSet = cdsRestricoesCheck
+    ScopeMappings = <>
+    Left = 156
+    Top = 194
+  end
+  object BindSourceDBIntegridadeReferencial: TBindSourceDB
+    DataSet = cdsIntegridadeReferencial
+    ScopeMappings = <>
+    Left = 185
+    Top = 194
+  end
+  object BindSourceDBGatilhos: TBindSourceDB
+    DataSet = cdsGatilhos
+    ScopeMappings = <>
+    Left = 214
+    Top = 194
+  end
+  object BindSourceDBPrivilegios: TBindSourceDB
+    DataSet = cdsPrivilegios
+    ScopeMappings = <>
+    Left = 243
+    Top = 194
+  end
+  object cdsColunas: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 11
+    Top = 256
+    object cdsColunasnumero: TSmallintField
+      DisplayLabel = 'N'#250'mero'
+      FieldName = 'numero'
+    end
+    object cdsColunasnome: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'nome'
+      Size = 31
+    end
+    object cdsColunastipo: TStringField
+      DisplayLabel = 'Tipo'
+      FieldName = 'tipo'
+      Size = 40
+    end
+    object cdsColunascaractere: TStringField
+      DisplayLabel = 'Caracteres (Charset)'
+      FieldName = 'caractere'
+      Size = 31
+    end
+    object cdsColunasordenacao: TStringField
+      DisplayLabel = 'Ordena'#231#227'o'
+      FieldName = 'ordenacao'
+      Size = 31
+    end
+    object cdsColunasnulo: TStringField
+      DisplayLabel = 'Permite Nulo?'
+      FieldName = 'nulo'
+      Size = 3
+    end
+    object cdsColunasdefault: TStringField
+      DisplayLabel = 'Valor Padr'#227'o'
+      FieldName = 'default'
+      Size = 255
+    end
+    object cdsColunasdominio: TStringField
+      DisplayLabel = 'Dom'#237'nio'
+      FieldName = 'dominio'
+      Size = 31
+    end
+    object cdsColunascomputedBy: TMemoField
+      DisplayLabel = 'Computed By'
+      FieldName = 'computedBy'
+      BlobType = ftMemo
+    end
+  end
+  object cdsIndices: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    AfterScroll = cdsIndicesAfterScroll
+    Left = 40
+    Top = 256
+    object cdsIndicesindex_name: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'index_name'
+      Size = 31
+    end
+    object cdsIndicesunique_flag: TStringField
+      DisplayLabel = #218'nico'
+      FieldName = 'unique_flag'
+      Size = 3
+    end
+    object cdsIndicesindex_type: TStringField
+      DisplayLabel = 'Tipo'
+      FieldName = 'index_type'
+      Size = 11
+    end
+  end
+  object cdsRestricoesUnique: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    AfterScroll = cdsRestricoesUniqueAfterScroll
+    Left = 69
+    Top = 256
+    object StringField1: TStringField
+      DisplayLabel = #205'ndice'
+      FieldName = 'index_name'
+      Size = 31
+    end
+  end
+  object cdsRestricoesCheck: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 98
+    Top = 256
+    object cdsRestricoesCheckconstraint_name: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'constraint_name'
+      Size = 31
+    end
+    object cdsRestricoesChecktrigger_type: TStringField
+      DisplayLabel = 'Tipo'
+      FieldName = 'trigger_type'
+      Size = 13
+    end
+    object cdsRestricoesChecktrigger_name: TStringField
+      DisplayLabel = 'Gatilho'
+      FieldName = 'trigger_name'
+      Size = 31
+    end
+    object cdsRestricoesChecktrigger_source: TMemoField
+      DisplayLabel = 'Restri'#231#227'o'
+      FieldName = 'trigger_source'
+      BlobType = ftMemo
+    end
+  end
+  object cdsIntegridadeReferencial: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 127
+    Top = 256
+    object StringField2: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'constraint_name'
+      Size = 31
+    end
+    object cdsIntegridadeReferencialrelation_name: TStringField
+      DisplayLabel = 'Tabela Ancestral'
+      FieldName = 'relation_name'
+      Size = 31
+    end
+    object cdsIntegridadeReferencialupdate_rule: TStringField
+      DisplayLabel = 'Regra Update'
+      FieldName = 'update_rule'
+      Size = 31
+    end
+    object cdsIntegridadeReferencialdelete_rule: TStringField
+      DisplayLabel = 'Regra Delete'
+      FieldName = 'delete_rule'
+      Size = 31
+    end
+  end
+  object cdsGatilhos: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 156
+    Top = 256
+    object StringField5: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'trigger_name'
+      Size = 31
+    end
+    object StringField4: TStringField
+      DisplayLabel = 'Tipo'
+      FieldName = 'trigger_type'
+      Size = 13
+    end
+    object MemoField1: TMemoField
+      DisplayLabel = 'Express'#227'o'
+      FieldName = 'trigger_source'
+      BlobType = ftMemo
+    end
+    object cdsGatilhostrigger_inactive: TStringField
+      DisplayLabel = 'Situa'#231#227'o'
+      FieldName = 'trigger_inactive'
+      Size = 7
+    end
+  end
+  object cdsPrivilegios: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 185
+    Top = 256
+    object cdsPrivilegiosusuario: TStringField
+      DisplayLabel = 'Usu'#225'rio'
+      FieldName = 'usuario'
+      Size = 31
+    end
+    object cdsPrivilegiosselect: TStringField
+      DisplayLabel = 'Select'
+      FieldName = 'select'
+      Size = 3
+    end
+    object cdsPrivilegiosupdate: TStringField
+      DisplayLabel = 'Update'
+      FieldName = 'update'
+      Size = 3
+    end
+    object cdsPrivilegiosdelete: TStringField
+      DisplayLabel = 'Delete'
+      FieldName = 'delete'
+      Size = 3
+    end
+    object cdsPrivilegiosinsert: TStringField
+      DisplayLabel = 'Insert'
+      FieldName = 'insert'
+      Size = 3
+    end
+    object cdsPrivilegiosreference: TStringField
+      DisplayLabel = 'References'
+      FieldName = 'reference'
+      Size = 3
+    end
+  end
+  object cdsColunasIndice: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 40
+    Top = 285
+    object cdsColunasIndicefield_position: TSmallintField
+      DisplayLabel = 'Posi'#231#227'o'
+      FieldName = 'field_position'
+    end
+    object cdsColunasIndicefield_name: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'field_name'
+      Size = 31
+    end
+    object cdsColunasIndiceindex_type: TStringField
+      DisplayLabel = 'Tipo'
+      FieldName = 'index_type'
+      Size = 11
+    end
+  end
+  object cdsColunasRestricaoUnique: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 69
+    Top = 285
+    object SmallintField1: TSmallintField
+      DisplayLabel = 'Posi'#231#227'o'
+      FieldName = 'field_position'
+    end
+    object StringField3: TStringField
+      DisplayLabel = 'Nome'
+      FieldName = 'field_name'
+      Size = 31
+    end
+  end
+  object BindingsList: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 11
+    Top = 194
+    object LinkGridToDataSourceBindSourceDBDados: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBDados
+      GridControl = grdDados
+      Columns = <>
+    end
+    object LinkGridToDataSourceBindSourceDBIndices: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBIndices
+      GridControl = grdIndices
+      Columns = <>
+    end
+    object LinkGridToDataSourceBindSourceDBColunas: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBColunas
+      GridControl = grdColunas
+      Columns = <>
+    end
+    object LinkGridToDataSourceBindSourceDBRestricoesUnique: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBRestricoesUnique
+      GridControl = grdRestricoesUnique
+      Columns = <>
+    end
+    object LinkGridToDataSourceBindSourceDBColunasIndice: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBColunasIndice
+      GridControl = grdColunasIndice
+      Columns = <>
+    end
+    object LinkGridToDataSourceBindSourceDBColunasRestricaoUnique: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBColunasRestricaoUnique
+      GridControl = grdColunasRestricaoUnique
+      Columns = <>
+    end
+    object LinkGridToDataSourceBindSourceDBRestricoesCheck: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBRestricoesCheck
+      GridControl = grdRestricoesCheck
+      Columns = <>
+    end
+    object LinkGridToDataSourceBindSourceDBGatilhos: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBGatilhos
+      GridControl = grdGatilhos
+      Columns = <>
+    end
+    object LinkGridToDataSourceBindSourceDBIntegridadeReferencial: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBIntegridadeReferencial
+      GridControl = grdIntegridadeReferencial
+      Columns = <>
+    end
+    object LinkGridToDataSourceBindSourceDBPrivilegios: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBPrivilegios
+      GridControl = grdPrivilegios
+      Columns = <>
+    end
+  end
+  object BindSourceDBDados: TBindSourceDB
+    DataSet = fDAC.FDQuery
+    ScopeMappings = <>
+    Left = 40
+    Top = 194
+  end
+end

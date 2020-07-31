@@ -1,0 +1,210 @@
+inherited fCriarBanco: TfCriarBanco
+  Caption = 'Criar Banco'
+  Position = ScreenCenter
+  DesignerMasterStyle = 0
+  object pnlMensagem: TPanel
+    Align = Bottom
+    Position.Y = 329.000000000000000000
+    Size.Width = 568.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 5
+    object btnCriar: TButton
+      Align = Right
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 486.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Criar'
+      OnClick = btnCriarClick
+    end
+    object lbMensagem: TLabel
+      Align = Client
+      StyledSettings = [Family, Size, Style]
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Size.Width = 478.000000000000000000
+      Size.Height = 14.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = '<Mensagem>'
+    end
+  end
+  object pnlEdicao: TPanel
+    Align = Client
+    Size.Width = 568.000000000000000000
+    Size.Height = 329.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    object lbBanco: TLabel
+      Position.X = 34.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 343.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Nome do Banco (caminho completo)'
+    end
+    object edBanco: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Anchors = [akLeft, akTop, akRight]
+      TabOrder = 0
+      Position.X = 34.000000000000000000
+      Position.Y = 42.000000000000000000
+      Size.Width = 502.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object btnNome: TEditButton
+        CanFocus = False
+        Cursor = crArrow
+        Size.Width = 20.000000000000000000
+        Size.Height = 18.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = '...'
+        OnClick = btnNomeClick
+      end
+    end
+    object lbCharSet: TLabel
+      Position.X = 34.000000000000000000
+      Position.Y = 120.000000000000000000
+      Size.Width = 200.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Conjunto de Caracteres (CharSet)'
+    end
+    object cbCharSet: TComboBox
+      ItemIndex = 2
+      Position.X = 34.000000000000000000
+      Position.Y = 138.000000000000000000
+      Size.Width = 200.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object ListBoxItem7: TListBoxItem
+        TabOrder = 1
+        Text = 'NONE'
+      end
+      object ListBoxItem6: TListBoxItem
+        TabOrder = 0
+        Text = 'ISO8859_1'
+      end
+      object ListBoxItem8: TListBoxItem
+        Size.Width = 19.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'WIN1252'
+      end
+    end
+    object lbDialeto: TLabel
+      Position.X = 34.000000000000000000
+      Position.Y = 166.000000000000000000
+      Size.Width = 200.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Dialeto'
+    end
+    object cbDialeto: TComboBox
+      ItemIndex = 2
+      Position.X = 34.000000000000000000
+      Position.Y = 184.000000000000000000
+      Size.Width = 200.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object ListBoxItem1: TListBoxItem
+        TabOrder = 0
+        Text = '1'
+      end
+      object ListBoxItem2: TListBoxItem
+        TabOrder = 1
+        Text = '2'
+      end
+      object ListBoxItem3: TListBoxItem
+        Size.Width = 19.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = '3'
+      end
+    end
+    object lbPagina: TLabel
+      Position.X = 34.000000000000000000
+      Position.Y = 72.000000000000000000
+      Size.Width = 200.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Tamanho da P'#225'gina'
+    end
+    object cbPagina: TComboBox
+      ItemIndex = 3
+      Position.X = 34.000000000000000000
+      Position.Y = 90.000000000000000000
+      Size.Width = 200.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object ListBoxItem4: TListBoxItem
+        TabOrder = 0
+        Text = '1024'
+      end
+      object ListBoxItem5: TListBoxItem
+        TabOrder = 1
+        Text = '2048'
+      end
+      object ListBoxItem9: TListBoxItem
+        Size.Width = 19.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = '4096'
+      end
+      object ListBoxItem13: TListBoxItem
+        Size.Width = 19.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = '8192'
+      end
+      object ListBoxItem14: TListBoxItem
+        TabOrder = 4
+        Text = '16384'
+      end
+    end
+    object Label11: TLabel
+      Position.X = 34.000000000000000000
+      Position.Y = 214.000000000000000000
+      Size.Width = 200.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Biblioteca (cliente Firebird)'
+    end
+    object edBiblioteca: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Anchors = [akLeft, akTop, akRight]
+      TabOrder = 4
+      Position.X = 34.000000000000000000
+      Position.Y = 232.000000000000000000
+      Size.Width = 502.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      object btnBiblioteca: TEditButton
+        CanFocus = False
+        Cursor = crArrow
+        Size.Width = 20.000000000000000000
+        Size.Height = 18.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = '...'
+        OnClick = btnBibliotecaClick
+      end
+    end
+  end
+end

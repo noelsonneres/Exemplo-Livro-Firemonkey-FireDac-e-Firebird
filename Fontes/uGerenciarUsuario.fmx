@@ -1,0 +1,238 @@
+inherited fGerenciarUsuario: TfGerenciarUsuario
+  Caption = 'Registrar Banco de Dados'
+  Position = ScreenCenter
+  DesignerMasterStyle = 0
+  object pnlAcoes: TPanel
+    Align = Bottom
+    Position.Y = 326.000000000000000000
+    Size.Width = 568.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object btnNovo: TButton
+      Align = Right
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 153.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 55.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Novo'
+      OnClick = btnNovoClick
+    end
+    object btnExcluir: TButton
+      Align = Right
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 210.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 55.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Excluir'
+      OnClick = btnExcluirClick
+    end
+    object btnGrantsUser: TButton
+      Align = Right
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 324.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Privil'#233'gios (Usu'#225'rio)'
+      OnClick = btnGrantsUserClick
+    end
+    object btnSalvar: TButton
+      Align = Right
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 267.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 55.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Salvar'
+      OnClick = btnSalvarClick
+    end
+    object btnGrantsRole: TButton
+      Align = Right
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 446.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Privil'#233'gios (Papel)'
+      OnClick = btnGrantsRoleClick
+    end
+  end
+  object pnlLateral: TPanel
+    Align = Left
+    Size.Width = 150.000000000000000000
+    Size.Height = 326.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object ListBox: TListBox
+      Align = Client
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Size.Width = 142.000000000000000000
+      Size.Height = 318.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnClick = ListBoxClick
+      DisableFocusEffect = True
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+    end
+  end
+  object Splitter: TSplitter
+    Align = Left
+    Cursor = crHSplit
+    MinSize = 20.000000000000000000
+    Position.X = 150.000000000000000000
+    Size.Width = 3.000000000000000000
+    Size.Height = 326.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object pnlCentral: TPanel
+    Align = Client
+    Size.Width = 415.000000000000000000
+    Size.Height = 326.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object grpUsuario: TGroupBox
+      Align = Client
+      Margins.Left = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Size.Width = 411.000000000000000000
+      Size.Height = 324.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Dados do Usu'#225'rio'
+      TabOrder = 0
+      object Label8: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 36.000000000000000000
+        Text = 'Nome'
+      end
+      object Label9: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 62.000000000000000000
+        Text = 'Senha'
+      end
+      object edUsuario: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Position.X = 100.000000000000000000
+        Position.Y = 34.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        OnChange = edUsuarioChange
+      end
+      object edSenha: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.X = 100.000000000000000000
+        Position.Y = 60.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object cbPapeis: TComboBox
+        ItemIndex = 2
+        Position.X = 100.000000000000000000
+        Position.Y = 272.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        OnClosePopup = cbPapeisClosePopup
+      end
+      object Label1: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 124.000000000000000000
+        Text = 'Primeiro Nome'
+      end
+      object Label2: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 150.000000000000000000
+        Text = 'Nome do Meio'
+      end
+      object Label3: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 177.000000000000000000
+        Text = #218'ltimo Nome'
+      end
+      object edPrimeiroNome: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 2
+        Position.X = 100.000000000000000000
+        Position.Y = 122.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object edNomeMeio: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 3
+        Position.X = 100.000000000000000000
+        Position.Y = 148.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object edUltimoNome: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 4
+        Position.X = 100.000000000000000000
+        Position.Y = 174.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label4: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 275.000000000000000000
+        Size.Width = 103.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Pap'#233'is'
+      end
+      object Label5: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 203.000000000000000000
+        Text = 'Papel'
+      end
+      object cbPapeisUsuario: TComboEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 5
+        ItemHeight = 19.000000000000000000
+        ItemIndex = -1
+        Position.X = 100.000000000000000000
+        Position.Y = 200.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+  end
+end

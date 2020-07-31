@@ -1,0 +1,62 @@
+inherited fTeste: TfTeste
+  Caption = 'fxForm1'
+  Position = ScreenCenter
+  DesignerMasterStyle = 0
+  object Button1: TButton
+    Position.X = 16.000000000000000000
+    Position.Y = 8.000000000000000000
+    TabOrder = 2
+    Text = 'Button1'
+    OnClick = Button1Click
+  end
+  object Memo: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    Position.Y = 48.000000000000000000
+    Size.Width = 568.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+  end
+  object Button2: TButton
+    Position.X = 104.000000000000000000
+    Position.Y = 9.000000000000000000
+    TabOrder = 1
+    Text = 'Button2'
+    OnClick = Button2Click
+  end
+  object Grid: TGrid
+    Align = Bottom
+    Position.Y = 144.000000000000000000
+    Size.Width = 568.000000000000000000
+    Size.Height = 207.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    RowCount = 100
+    RowHeight = 21.000000000000000000
+  end
+  object Button3: TButton
+    Position.X = 192.000000000000000000
+    Position.Y = 9.000000000000000000
+    TabOrder = 0
+    Text = 'Button3'
+    OnClick = Button3Click
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = fDAC.FDMemTable
+    ScopeMappings = <>
+    Left = 80
+    Top = 197
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 44
+    Top = 197
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = Grid
+      Columns = <>
+    end
+  end
+end

@@ -1,0 +1,36 @@
+inherited fHeader: TfHeader
+  Caption = 'Header'
+  ClientHeight = 526
+  Position = ScreenCenter
+  DesignerMasterStyle = 0
+  object MemoHeader: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    Align = Client
+    Size.Width = 568.000000000000000000
+    Size.Height = 501.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+  end
+  object ToolBar: TToolBar
+    Align = MostTop
+    Size.Width = 568.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object btnSair: TButton
+      Align = Left
+      CanFocus = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Sair'
+      OnClick = btnSairClick
+    end
+  end
+end

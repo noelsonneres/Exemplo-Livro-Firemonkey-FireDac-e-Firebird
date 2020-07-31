@@ -1,0 +1,214 @@
+inherited fCriarDominio: TfCriarDominio
+  Caption = 'Criar Dom'#237'nios'
+  ClientHeight = 526
+  Position = ScreenCenter
+  DesignerMasterStyle = 0
+  object pnlPrincipal: TPanel
+    Align = Client
+    Size.Width = 568.000000000000000000
+    Size.Height = 501.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object pnlEdicao: TPanel
+      Align = Top
+      Margins.Bottom = 2.000000000000000000
+      Size.Width = 568.000000000000000000
+      Size.Height = 70.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object btnEditar: TButton
+        Anchors = [akTop, akRight]
+        Position.X = 383.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 54.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Editar'
+        OnClick = btnEditarClick
+      end
+      object btnLimpar: TButton
+        Anchors = [akTop, akRight]
+        Position.X = 441.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 54.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Limpar'
+        OnClick = btnLimparClick
+      end
+      object btnSalvar: TButton
+        Anchors = [akTop, akRight]
+        Position.X = 499.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 54.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'Salvar'
+        OnClick = btnSalvarClick
+      end
+      object Label4: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 57.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Nome'
+      end
+      object edMetadado: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akLeft, akTop, akRight]
+        TabOrder = 0
+        Position.X = 70.000000000000000000
+        Position.Y = 10.000000000000000000
+        Enabled = False
+        Size.Width = 300.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label2: TLabel
+        Position.X = 9.000000000000000000
+        Position.Y = 41.000000000000000000
+        Size.Width = 57.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Dom'#237'nios'
+      end
+      object cbMetadados: TComboBox
+        Anchors = [akLeft, akTop, akRight]
+        ItemIndex = 0
+        ItemHeight = 15.000000000000000000
+        Placement = Right
+        Position.X = 70.000000000000000000
+        Position.Y = 38.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        OnClosePopup = cbMetadadosClosePopup
+      end
+    end
+    object TabControl: TTabControl
+      Align = Client
+      Size.Width = 568.000000000000000000
+      Size.Height = 429.000000000000000000
+      Size.PlatformDefault = False
+      TabIndex = 0
+      TabOrder = 1
+      TabPosition = PlatformDefault
+      object tabEdicao: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = True
+        Size.Width = 55.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Edi'#231#227'o'
+        object MemoMetadado: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          Align = Client
+          Margins.Left = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 564.000000000000000000
+          Size.Height = 378.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          TextSettings.Font.Family = 'Consolas'
+          StyledSettings = [Style, FontColor]
+        end
+        object pnlMensagem: TPanel
+          Align = Bottom
+          Position.Y = 380.000000000000000000
+          Size.Width = 568.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          object lbMensagem: TLabel
+            Position.X = 8.000000000000000000
+            Position.Y = 4.000000000000000000
+            Size.Width = 553.000000000000000000
+            Size.Height = 17.000000000000000000
+            Size.PlatformDefault = False
+            Text = '<Mensagem>'
+          end
+        end
+      end
+      object tabDDL: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 43.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'DDL'
+        object MemoDDL: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          Align = Client
+          Size.Width = 568.000000000000000000
+          Size.Height = 405.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          ReadOnly = True
+        end
+      end
+    end
+  end
+  object ToolBar: TToolBar
+    Align = MostTop
+    Size.Width = 568.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object btnSair: TButton
+      Align = Left
+      CanFocus = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Sair'
+      OnClick = btnSairClick
+    end
+    object btnCriar: TButton
+      Align = Left
+      CanFocus = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 84.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Criar'
+      OnClick = btnCriarClick
+    end
+    object btnEliminar: TButton
+      Align = Left
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 166.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Eliminar'
+      OnClick = btnEliminarClick
+    end
+  end
+end

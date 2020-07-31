@@ -1,0 +1,356 @@
+inherited fRegistrarBanco: TfRegistrarBanco
+  ActiveControl = edAlias
+  Caption = 'Registrar Banco de Dados'
+  Position = ScreenCenter
+  DesignerMasterStyle = 0
+  object pnlAcoes: TPanel
+    Align = Bottom
+    Margins.Top = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.Y = 327.000000000000000000
+    Size.Width = 566.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object btnNovo: TButton
+      Align = Right
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 150.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 102.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Novo'
+      OnClick = btnNovoClick
+    end
+    object btnExcluir: TButton
+      Align = Right
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 254.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 102.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Excluir'
+      OnClick = btnExcluirClick
+    end
+    object btnTestar: TButton
+      Align = Right
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 358.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 102.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Testar Conex'#227'o'
+      OnClick = btnTestarClick
+    end
+    object btnSalvar: TButton
+      Align = Right
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 462.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 102.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Salvar'
+      OnClick = btnSalvarClick
+    end
+  end
+  object pnlLateral: TPanel
+    Align = Left
+    Size.Width = 150.000000000000000000
+    Size.Height = 325.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object ListBox: TListBox
+      Align = Client
+      Margins.Left = 4.000000000000000000
+      Margins.Top = 4.000000000000000000
+      Margins.Right = 4.000000000000000000
+      Margins.Bottom = 4.000000000000000000
+      Size.Width = 142.000000000000000000
+      Size.Height = 317.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnClick = ListBoxClick
+      DisableFocusEffect = True
+      DefaultItemStyles.ItemStyle = ''
+      DefaultItemStyles.GroupHeaderStyle = ''
+      DefaultItemStyles.GroupFooterStyle = ''
+    end
+  end
+  object Splitter: TSplitter
+    Align = Left
+    Cursor = crHSplit
+    MinSize = 20.000000000000000000
+    Position.X = 150.000000000000000000
+    Size.Width = 3.000000000000000000
+    Size.Height = 325.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object pnlCentral: TPanel
+    Align = Client
+    Size.Width = 415.000000000000000000
+    Size.Height = 325.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object grpBanco: TGroupBox
+      Align = Top
+      Margins.Left = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Size.Width = 411.000000000000000000
+      Size.Height = 210.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Dados do Banco'
+      TabOrder = 0
+      object Label1: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 26.000000000000000000
+        Text = 'Alias'
+      end
+      object Label2: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 52.000000000000000000
+        Text = 'Servidor'
+      end
+      object Label3: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 78.000000000000000000
+        Text = 'Protocolo'
+      end
+      object Label4: TLabel
+        Position.X = 241.000000000000000000
+        Position.Y = 78.000000000000000000
+        Size.Width = 64.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Porta'
+      end
+      object Label5: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 105.000000000000000000
+        Text = 'Nome'
+      end
+      object Label6: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 130.000000000000000000
+        Text = 'Char Set'
+      end
+      object Label7: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 156.000000000000000000
+        Text = 'Dialeto'
+      end
+      object edAlias: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Position.X = 70.000000000000000000
+        Position.Y = 24.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object edServidor: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akLeft, akTop, akRight]
+        TabOrder = 1
+        Position.X = 70.000000000000000000
+        Position.Y = 50.000000000000000000
+        Size.Width = 330.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object cbProtocolo: TComboBox
+        ItemIndex = 0
+        Position.X = 70.000000000000000000
+        Position.Y = 76.000000000000000000
+        TabOrder = 2
+        object ListBoxItem4: TListBoxItem
+          Size.Width = 19.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = 'Local'
+        end
+        object ListBoxItem5: TListBoxItem
+          Size.Width = 19.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          Text = 'TCPIP'
+        end
+      end
+      object edPorta: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 3
+        Text = '3050'
+        Position.X = 277.000000000000000000
+        Position.Y = 76.000000000000000000
+        Size.Width = 123.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object edBanco: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akLeft, akTop, akRight]
+        TabOrder = 4
+        Position.X = 70.000000000000000000
+        Position.Y = 102.000000000000000000
+        Size.Width = 330.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        object btnNome: TEditButton
+          CanFocus = False
+          Cursor = crArrow
+          Size.Width = 20.000000000000000000
+          Size.Height = 18.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = '...'
+          OnClick = btnNomeClick
+        end
+      end
+      object cbCharSet: TComboBox
+        ItemIndex = 2
+        Position.X = 70.000000000000000000
+        Position.Y = 128.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        object ListBoxItem7: TListBoxItem
+          TabOrder = 1
+          Text = 'NONE'
+        end
+        object ListBoxItem6: TListBoxItem
+          TabOrder = 0
+          Text = 'ISO8859_1'
+        end
+        object ListBoxItem8: TListBoxItem
+          Size.Width = 19.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = 'WIN1252'
+        end
+      end
+      object cbDialeto: TComboBox
+        ItemIndex = 2
+        Position.X = 70.000000000000000000
+        Position.Y = 154.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        object ListBoxItem1: TListBoxItem
+          TabOrder = 0
+          Text = '1'
+        end
+        object ListBoxItem2: TListBoxItem
+          TabOrder = 1
+          Text = '2'
+        end
+        object ListBoxItem3: TListBoxItem
+          Size.Width = 19.000000000000000000
+          Size.Height = 19.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          Text = '3'
+        end
+      end
+      object Label11: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 183.000000000000000000
+        Text = 'Biblioteca'
+      end
+      object edBiblioteca: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akLeft, akTop, akRight]
+        TabOrder = 6
+        Position.X = 70.000000000000000000
+        Position.Y = 180.000000000000000000
+        Size.Width = 330.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        object btnBiblioteca: TEditButton
+          CanFocus = False
+          Cursor = crArrow
+          Size.Width = 20.000000000000000000
+          Size.Height = 18.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          Text = '...'
+          OnClick = btnBibliotecaClick
+        end
+      end
+    end
+    object grpUsuario: TGroupBox
+      Align = Client
+      Margins.Left = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Size.Width = 411.000000000000000000
+      Size.Height = 113.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Dados do Usu'#225'rio'
+      TabOrder = 1
+      object Label8: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 26.000000000000000000
+        Text = 'Nome'
+      end
+      object Label9: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 52.000000000000000000
+        Text = 'Senha'
+      end
+      object Label10: TLabel
+        Position.X = 10.000000000000000000
+        Position.Y = 79.000000000000000000
+        Text = 'Papel'
+      end
+      object edUsuario: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 0
+        Position.X = 70.000000000000000000
+        Position.Y = 24.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object edSenha: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Position.X = 70.000000000000000000
+        Position.Y = 50.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object edPapel: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 2
+        Position.X = 70.000000000000000000
+        Position.Y = 76.000000000000000000
+        Size.Width = 200.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+  end
+end

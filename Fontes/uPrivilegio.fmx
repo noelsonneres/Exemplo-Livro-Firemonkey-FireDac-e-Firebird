@@ -1,0 +1,455 @@
+inherited fPrivilegio: TfPrivilegio
+  BorderStyle = Single
+  Caption = 'Gerenciar Privil'#233'gios'
+  ClientHeight = 526
+  Position = ScreenCenter
+  DesignerMasterStyle = 0
+  object pnlObjeto: TPanel
+    Align = Top
+    Margins.Bottom = 2.000000000000000000
+    Size.Width = 568.000000000000000000
+    Size.Height = 36.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Label1: TLabel
+      Position.X = 8.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 65.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Objeto'
+    end
+    object edObjeto: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      Position.X = 56.000000000000000000
+      Position.Y = 8.000000000000000000
+      Enabled = False
+      Size.Width = 349.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object lbTipoObjeto: TLabel
+      Position.X = 442.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 119.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = '<Tipo de Objeto>'
+    end
+    object Label2: TLabel
+      Position.X = 412.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 31.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Tipo:'
+    end
+  end
+  object pnlIndividual: TPanel
+    Align = Top
+    Margins.Left = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Position.X = 2.000000000000000000
+    Position.Y = 38.000000000000000000
+    Size.Width = 564.000000000000000000
+    Size.Height = 290.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object btnConfirmarTabela: TButton
+      Position.X = 380.000000000000000000
+      Position.Y = 184.000000000000000000
+      Size.Width = 180.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 8
+      Text = 'Confirmar Tabela'
+      OnClick = btnConfirmarTabelaClick
+    end
+    object btnConfirmarVisao: TButton
+      Position.X = 380.000000000000000000
+      Position.Y = 208.000000000000000000
+      Size.Width = 180.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 9
+      Text = 'Confirmar Vis'#227'o'
+      OnClick = btnConfirmarVisaoClick
+    end
+    object btnConfirmarProcedimento: TButton
+      Position.X = 380.000000000000000000
+      Position.Y = 232.000000000000000000
+      Size.Width = 180.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 10
+      Text = 'Confirmar Procedimento'
+      OnClick = btnConfirmarProcedimentoClick
+    end
+    object cbProcedimentos: TComboBox
+      ItemIndex = 0
+      ItemHeight = 15.000000000000000000
+      Placement = Right
+      Position.X = 380.000000000000000000
+      Position.Y = 38.000000000000000000
+      Size.Width = 180.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      OnClosePopup = cbProcedimentosClosePopup
+    end
+    object cbTabelas: TComboBox
+      ItemIndex = 0
+      ItemHeight = 15.000000000000000000
+      Placement = Right
+      Position.X = 8.000000000000000000
+      Position.Y = 38.000000000000000000
+      Size.Width = 180.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnClosePopup = cbTabelasClosePopup
+    end
+    object cbVisoes: TComboBox
+      ItemIndex = 0
+      ItemHeight = 15.000000000000000000
+      Placement = Right
+      Position.X = 194.000000000000000000
+      Position.Y = 38.000000000000000000
+      Size.Width = 180.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      OnClosePopup = cbVisoesClosePopup
+    end
+    object Label3: TLabel
+      Position.X = 8.000000000000000000
+      Position.Y = 20.000000000000000000
+      Text = 'Tabelas'
+    end
+    object Label4: TLabel
+      Position.X = 194.000000000000000000
+      Position.Y = 20.000000000000000000
+      Text = 'Vis'#245'es'
+    end
+    object Label5: TLabel
+      Position.X = 380.000000000000000000
+      Position.Y = 20.000000000000000000
+      Text = 'Procedimentos'
+    end
+    object edTabelaSelecionada: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 5
+      ReadOnly = True
+      Position.X = 8.000000000000000000
+      Position.Y = 184.000000000000000000
+      Size.Width = 364.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object edVisaoSelecionada: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 6
+      ReadOnly = True
+      Position.X = 8.000000000000000000
+      Position.Y = 208.000000000000000000
+      Size.Width = 364.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object edProcedimentoSelecionado: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 7
+      ReadOnly = True
+      Position.X = 8.000000000000000000
+      Position.Y = 232.000000000000000000
+      Size.Width = 364.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Label6: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 8.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 553.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = 'GERENCIAMENTO INDIVIDUAL DE METADADOS'
+    end
+    object grpVisoes: TGroupBox
+      Position.X = 6.000000000000000000
+      Position.Y = 62.000000000000000000
+      Size.Width = 369.000000000000000000
+      Size.Height = 116.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Op'#231#245'es para tabelas e vis'#245'es'
+      TabOrder = 3
+      object chkSelect: TCheckBox
+        Position.X = 20.000000000000000000
+        Position.Y = 22.000000000000000000
+        Size.Width = 84.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Select'
+      end
+      object chkInsert: TCheckBox
+        Position.X = 20.000000000000000000
+        Position.Y = 38.000000000000000000
+        Size.Width = 84.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Insert'
+      end
+      object chkUpdate: TCheckBox
+        Position.X = 20.000000000000000000
+        Position.Y = 54.000000000000000000
+        Size.Width = 84.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'Update'
+      end
+      object chkDelete: TCheckBox
+        Position.X = 20.000000000000000000
+        Position.Y = 70.000000000000000000
+        Size.Width = 84.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Delete'
+      end
+      object chkReferences: TCheckBox
+        Position.X = 20.000000000000000000
+        Position.Y = 86.000000000000000000
+        Size.Width = 84.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        Text = 'References'
+      end
+      object chkSelectGrantOption: TCheckBox
+        Position.X = 120.000000000000000000
+        Position.Y = 22.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Grant Option'
+      end
+      object chkReferencesGrantOption: TCheckBox
+        Position.X = 120.000000000000000000
+        Position.Y = 86.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        Text = 'Grant Option'
+      end
+      object chkDeleteGrantOption: TCheckBox
+        Position.X = 120.000000000000000000
+        Position.Y = 70.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        Text = 'Grant Option'
+      end
+      object chkInsertGrantOption: TCheckBox
+        Position.X = 120.000000000000000000
+        Position.Y = 38.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'Grant Option'
+      end
+      object chkUpdateGrantOption: TCheckBox
+        Position.X = 120.000000000000000000
+        Position.Y = 54.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = 'Grant Option'
+      end
+      object rbMarcarTodas: TRadioButton
+        Position.X = 230.000000000000000000
+        Position.Y = 22.000000000000000000
+        TabOrder = 10
+        Text = 'Marcar todas'
+        OnClick = rbMarcarTodasClick
+      end
+      object rbDesmarcarTodas: TRadioButton
+        Position.X = 230.000000000000000000
+        Position.Y = 38.000000000000000000
+        TabOrder = 11
+        Text = 'Desmarcar todas'
+        OnClick = rbDesmarcarTodasClick
+      end
+    end
+    object grpProcedimentos: TGroupBox
+      Position.X = 378.000000000000000000
+      Position.Y = 62.000000000000000000
+      Size.Width = 183.000000000000000000
+      Size.Height = 116.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Op'#231#245'es para procedimentos'
+      TabOrder = 4
+      object chkExecute: TCheckBox
+        Position.X = 20.000000000000000000
+        Position.Y = 22.000000000000000000
+        Size.Width = 71.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Execute'
+      end
+      object chkExecuteGrantOption: TCheckBox
+        Position.X = 20.000000000000000000
+        Position.Y = 38.000000000000000000
+        Size.Width = 96.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'Grant Option'
+      end
+    end
+    object btnLimpar: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 256.000000000000000000
+      TabOrder = 11
+      Text = 'Limpar'
+      OnClick = btnLimparClick
+    end
+  end
+  object pnlMensagem: TPanel
+    Align = Bottom
+    Position.Y = 501.000000000000000000
+    Size.Width = 568.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object lbMensagem: TLabel
+      Position.X = 8.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 553.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = '<Mensagem>'
+    end
+  end
+  object pnlGlobal: TPanel
+    Align = Client
+    Margins.Left = 2.000000000000000000
+    Margins.Right = 2.000000000000000000
+    Margins.Bottom = 2.000000000000000000
+    Size.Width = 564.000000000000000000
+    Size.Height = 169.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    object chkGrantAllTabelas: TCheckBox
+      Position.X = 6.000000000000000000
+      Position.Y = 27.000000000000000000
+      Size.Width = 387.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Conceder privil'#233'gios totais a todas as tabelas'
+      OnClick = chkGrantAllTabelasClick
+    end
+    object chkRevokeAllTabelas: TCheckBox
+      Position.X = 6.000000000000000000
+      Position.Y = 42.000000000000000000
+      Size.Width = 364.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Retirar privil'#233'gios de todas as tabelas'
+      OnClick = chkGrantAllTabelasClick
+    end
+    object chkGrantAllVisoes: TCheckBox
+      Position.X = 6.000000000000000000
+      Position.Y = 64.000000000000000000
+      Size.Width = 379.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Conceder privil'#233'gios totais a todas as vis'#245'es'
+      OnClick = chkGrantAllVisoesClick
+    end
+    object chkRevokeAllVisoes: TCheckBox
+      Position.X = 6.000000000000000000
+      Position.Y = 79.000000000000000000
+      Size.Width = 364.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Retirar privil'#233'gios de todas as vis'#245'es'
+      OnClick = chkGrantAllVisoesClick
+    end
+    object chkGrantAllProcedimentos: TCheckBox
+      Position.X = 6.000000000000000000
+      Position.Y = 101.000000000000000000
+      Size.Width = 387.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Conceder privil'#233'gios totais a todos os procedimentos'
+      OnClick = chkGrantAllProcedimentosClick
+    end
+    object chkRevokeAllProcedimentos: TCheckBox
+      Position.X = 6.000000000000000000
+      Position.Y = 116.000000000000000000
+      Size.Width = 364.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'Retirar privil'#233'gios de todos procedimentos'
+      OnClick = chkGrantAllProcedimentosClick
+    end
+    object btnConfirmarTabelas: TButton
+      Position.X = 380.000000000000000000
+      Position.Y = 26.000000000000000000
+      Size.Width = 180.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Text = 'Confirmar Tabelas'
+      OnClick = btnConfirmarTabelasClick
+    end
+    object btnConfirmarVisoes: TButton
+      Position.X = 380.000000000000000000
+      Position.Y = 63.000000000000000000
+      Size.Width = 180.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      Text = 'Confirmar Vis'#245'es'
+      OnClick = btnConfirmarVisoesClick
+    end
+    object btnConfirmarProcedimentos: TButton
+      Position.X = 380.000000000000000000
+      Position.Y = 100.000000000000000000
+      Size.Width = 180.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 8
+      Text = 'Confirmar Procedimentos'
+      OnClick = btnConfirmarProcedimentosClick
+    end
+    object Label7: TLabel
+      StyledSettings = [Family, Size, Style]
+      Position.X = 8.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 553.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claBlue
+      Text = 'GERENCIAMENTO GLOBAL DE METADADOS'
+    end
+  end
+end

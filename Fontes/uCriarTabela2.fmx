@@ -1,0 +1,690 @@
+inherited fCriarTabela2: TfCriarTabela2
+  Caption = 'Criar Tabelas'
+  ClientHeight = 425
+  Position = ScreenCenter
+  DesignerMasterStyle = 0
+  object pnlPrincipal: TPanel
+    Align = Client
+    Size.Width = 568.000000000000000000
+    Size.Height = 400.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object pnlEdicao: TPanel
+      Align = Top
+      Margins.Bottom = 2.000000000000000000
+      Size.Width = 568.000000000000000000
+      Size.Height = 200.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnClick = pnlEdicaoClick
+      object btnIncluirLista: TButton
+        Anchors = [akTop, akRight]
+        Enabled = False
+        Position.X = 234.000000000000000000
+        Position.Y = 170.000000000000000000
+        Size.Width = 102.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 16
+        Text = 'Incluir na Lista'
+        OnClick = btnIncluirListaClick
+      end
+      object btnAlterarLista: TButton
+        Anchors = [akTop, akRight]
+        Enabled = False
+        Position.X = 347.000000000000000000
+        Position.Y = 170.000000000000000000
+        Size.Width = 102.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 17
+        Text = 'Alterar Lista'
+        OnClick = btnAlterarListaClick
+      end
+      object btnSalvar: TButton
+        Anchors = [akTop, akRight]
+        Enabled = False
+        Position.X = 460.000000000000000000
+        Position.Y = 170.000000000000000000
+        Size.Width = 102.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 18
+        Text = 'Salvar'
+        OnClick = btnSalvarClick
+      end
+      object Label4: TLabel
+        Position.X = 8.000000000000000000
+        Position.Y = 38.000000000000000000
+        Size.Width = 66.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Tabela'
+      end
+      object edTabela: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akLeft, akTop, akRight]
+        TabOrder = 1
+        Position.X = 67.000000000000000000
+        Position.Y = 34.000000000000000000
+        Enabled = False
+        Size.Width = 160.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = edTabelaClick
+        OnEnter = edColunaEnter
+      end
+      object Label2: TLabel
+        Position.X = 8.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 66.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Tabelas'
+      end
+      object cbTabelas: TComboBox
+        Anchors = [akLeft, akTop, akRight]
+        ItemIndex = 0
+        ItemHeight = 15.000000000000000000
+        Placement = Right
+        Position.X = 67.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 160.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        OnClosePopup = cbTabelasClosePopup
+      end
+      object Label1: TLabel
+        Position.X = 8.000000000000000000
+        Position.Y = 64.000000000000000000
+        Size.Width = 66.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Coluna'
+      end
+      object edColuna: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akLeft, akTop, akRight]
+        TabOrder = 2
+        Position.X = 67.000000000000000000
+        Position.Y = 60.000000000000000000
+        Enabled = False
+        Size.Width = 160.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        OnEnter = edColunaEnter
+      end
+      object Label3: TLabel
+        Position.X = 8.000000000000000000
+        Position.Y = 116.000000000000000000
+        Size.Width = 66.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Tamanho'
+      end
+      object edTamanho: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 4
+        Text = '40'
+        Position.X = 67.000000000000000000
+        Position.Y = 112.000000000000000000
+        Enabled = False
+        Size.Width = 50.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label5: TLabel
+        Anchors = [akTop, akRight]
+        Position.X = 126.000000000000000000
+        Position.Y = 116.000000000000000000
+        Size.Width = 69.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Escala'
+      end
+      object edEscala: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akTop, akRight]
+        TabOrder = 5
+        Position.X = 187.000000000000000000
+        Position.Y = 112.000000000000000000
+        Enabled = False
+        Size.Width = 40.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label6: TLabel
+        Position.X = 8.000000000000000000
+        Position.Y = 89.000000000000000000
+        Size.Width = 66.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Tipo Dado'
+      end
+      object Label7: TLabel
+        Position.X = 8.000000000000000000
+        Position.Y = 140.000000000000000000
+        Size.Width = 66.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Subtipo'
+      end
+      object Label8: TLabel
+        Anchors = [akTop, akRight]
+        Position.X = 126.000000000000000000
+        Position.Y = 142.000000000000000000
+        Size.Width = 69.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Segmento'
+      end
+      object edSegmento: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akTop, akRight]
+        TabOrder = 7
+        Position.X = 187.000000000000000000
+        Position.Y = 138.000000000000000000
+        Enabled = False
+        Size.Width = 40.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label9: TLabel
+        Anchors = [akTop, akRight]
+        Position.X = 234.000000000000000000
+        Position.Y = 36.000000000000000000
+        Size.Width = 84.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'CharSet'
+      end
+      object Label14: TLabel
+        Anchors = [akTop, akRight]
+        Position.X = 234.000000000000000000
+        Position.Y = 88.000000000000000000
+        Size.Width = 57.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Default'
+      end
+      object edDefault: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akTop, akRight]
+        TabOrder = 13
+        Position.X = 310.000000000000000000
+        Position.Y = 86.000000000000000000
+        Enabled = False
+        Size.Width = 252.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label15: TLabel
+        Anchors = [akTop, akRight]
+        Position.X = 234.000000000000000000
+        Position.Y = 114.000000000000000000
+        Size.Width = 97.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Computed By'
+      end
+      object edComputedBy: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akTop, akRight]
+        TabOrder = 14
+        Position.X = 310.000000000000000000
+        Position.Y = 112.000000000000000000
+        Enabled = False
+        Size.Width = 252.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label16: TLabel
+        Anchors = [akTop, akRight]
+        Position.X = 236.000000000000000000
+        Position.Y = 141.000000000000000000
+        Size.Width = 97.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Check'
+      end
+      object edCheck: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akTop, akRight]
+        TabOrder = 15
+        Position.X = 310.000000000000000000
+        Position.Y = 138.000000000000000000
+        Enabled = False
+        Size.Width = 252.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object chkChavePrimaria: TCheckBox
+        Anchors = [akTop, akRight]
+        Position.X = 308.000000000000000000
+        Position.Y = 62.000000000000000000
+        Size.Width = 111.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 11
+        Text = 'Chave Prim'#225'ria'
+        OnClick = chkChavePrimariaClick
+      end
+      object chkNotNull: TCheckBox
+        Anchors = [akTop, akRight]
+        Position.X = 461.000000000000000000
+        Position.Y = 62.000000000000000000
+        Size.Width = 92.000000000000000000
+        Size.Height = 19.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 12
+        Text = 'Not Null'
+      end
+      object cbTipoDado: TComboEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akLeft, akTop, akRight]
+        TabOrder = 3
+        ItemHeight = 19.000000000000000000
+        Items.Strings = (
+          'CHAR'
+          'VARCHAR'
+          'SMALLINT'
+          'INTEGER'
+          'BIGINT'
+          'FLOAT'
+          'DOUBLE PRECISION'
+          'NUMERIC'
+          'DECIMAL'
+          'DATE'
+          'TIME'
+          'TIMESTAMP'
+          'BLOB'
+          'COMPUTED BY')
+        ItemIndex = 0
+        Text = 'CHAR'
+        Position.X = 67.000000000000000000
+        Position.Y = 86.000000000000000000
+        Size.Width = 160.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        OnClosePopup = cbTipoDadoClosePopup
+        OnExit = cbTipoDadoClosePopup
+      end
+      object cbSubtipo: TComboEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 6
+        ItemHeight = 19.000000000000000000
+        Items.Strings = (
+          '1'
+          '0')
+        ItemIndex = 0
+        Text = '1'
+        Position.X = 67.000000000000000000
+        Position.Y = 138.000000000000000000
+        Size.Width = 50.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object cbCharSet: TComboEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akTop, akRight]
+        TabOrder = 9
+        ItemHeight = 19.000000000000000000
+        Items.Strings = (
+          'NONE'
+          'WIN1252'
+          'ISO8859_1')
+        ItemIndex = 0
+        Text = 'NONE'
+        Position.X = 310.000000000000000000
+        Position.Y = 34.000000000000000000
+      end
+      object cbCollate: TComboEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Anchors = [akTop, akRight]
+        TabOrder = 10
+        ItemHeight = 19.000000000000000000
+        Items.Strings = (
+          'NONE'
+          'WIN_PTBR'
+          'PTBR')
+        ItemIndex = 0
+        Text = 'NONE'
+        Position.X = 463.000000000000000000
+        Position.Y = 34.000000000000000000
+      end
+      object Label11: TLabel
+        Position.X = 8.000000000000000000
+        Position.Y = 167.000000000000000000
+        Size.Width = 69.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Array'
+      end
+      object edArray: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 8
+        Position.X = 67.000000000000000000
+        Position.Y = 164.000000000000000000
+        Enabled = False
+        Size.Width = 50.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+    object TabControl: TTabControl
+      Align = Client
+      Size.Width = 568.000000000000000000
+      Size.Height = 198.000000000000000000
+      Size.PlatformDefault = False
+      TabIndex = 0
+      TabOrder = 1
+      TabPosition = PlatformDefault
+      object tabEdicao: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = True
+        Size.Width = 55.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        TabStop = False
+        Text = 'Edi'#231#227'o'
+        object pnlMensagem: TPanel
+          Align = Bottom
+          Position.Y = 149.000000000000000000
+          Size.Width = 568.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 1
+          object lbMensagem: TLabel
+            Position.X = 8.000000000000000000
+            Position.Y = 4.000000000000000000
+            Size.Width = 553.000000000000000000
+            Size.Height = 17.000000000000000000
+            Size.PlatformDefault = False
+            Text = '<Mensagem>'
+          end
+        end
+        object Panel1: TPanel
+          Align = Bottom
+          Position.Y = 124.000000000000000000
+          Size.Width = 568.000000000000000000
+          Size.Height = 25.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          object btnParaCima: TButton
+            Align = Left
+            Margins.Left = 2.000000000000000000
+            Margins.Top = 2.000000000000000000
+            Margins.Bottom = 2.000000000000000000
+            Position.X = 2.000000000000000000
+            Position.Y = 2.000000000000000000
+            Size.Width = 80.000000000000000000
+            Size.Height = 21.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 0
+            Text = 'Para cima'
+            OnClick = btnParaCimaClick
+          end
+          object btnParaBaixo: TButton
+            Align = Left
+            Margins.Left = 2.000000000000000000
+            Margins.Top = 2.000000000000000000
+            Margins.Bottom = 2.000000000000000000
+            Position.X = 84.000000000000000000
+            Position.Y = 2.000000000000000000
+            Size.Width = 80.000000000000000000
+            Size.Height = 21.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 1
+            Text = 'Para baixo'
+            OnClick = btnParaBaixoClick
+          end
+          object btnExcluir: TButton
+            Align = Left
+            Margins.Left = 2.000000000000000000
+            Margins.Top = 2.000000000000000000
+            Margins.Bottom = 2.000000000000000000
+            Position.X = 166.000000000000000000
+            Position.Y = 2.000000000000000000
+            Size.Width = 80.000000000000000000
+            Size.Height = 21.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 2
+            Text = 'Excluir'
+            OnClick = btnExcluirClick
+          end
+        end
+        object Grid: TGrid
+          Align = Client
+          Size.Width = 568.000000000000000000
+          Size.Height = 124.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          TabStop = False
+          OnDblClick = GridDblClick
+          RowCount = 100
+          RowHeight = 18.000000000000000000
+        end
+      end
+      object tabDDL: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 43.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        TabStop = False
+        Text = 'DDL'
+        object MemoDDL: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          Align = Client
+          Size.Width = 568.000000000000000000
+          Size.Height = 174.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          ReadOnly = True
+        end
+      end
+    end
+  end
+  object ToolBar: TToolBar
+    Align = MostTop
+    Size.Width = 568.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object btnSair: TButton
+      Align = Left
+      CanFocus = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Sair'
+      OnClick = btnSairClick
+    end
+    object btnCriar: TButton
+      Align = Left
+      CanFocus = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 84.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Criar'
+      OnClick = btnCriarClick
+    end
+    object btnEliminar: TButton
+      Align = Left
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 166.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Eliminar'
+      OnClick = btnEliminarClick
+    end
+  end
+  object Label10: TLabel
+    Anchors = [akTop, akRight]
+    Position.X = 420.000000000000000000
+    Position.Y = 62.000000000000000000
+    Size.Width = 54.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Collate'
+  end
+  object mtGrid: TFDMemTable
+    IndexFieldNames = 'ID'
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired]
+    UpdateOptions.CheckRequired = False
+    AutoCommitUpdates = False
+    Left = 62
+    Top = 292
+    object mtGridID: TIntegerField
+      FieldName = 'ID'
+      Visible = False
+    end
+    object mtGridColuna: TStringField
+      FieldName = 'Coluna'
+      Size = 31
+    end
+    object mtGridTipoDado: TStringField
+      DisplayLabel = 'Tipo Dado'
+      FieldName = 'TipoDado'
+      Size = 40
+    end
+    object mtGridTamanho: TIntegerField
+      FieldName = 'Tamanho'
+    end
+    object mtGridEscala: TIntegerField
+      FieldName = 'Escala'
+    end
+    object mtGridSubtipo: TSmallintField
+      FieldName = 'Subtipo'
+    end
+    object mtGridSegmento: TSmallintField
+      FieldName = 'Segmento'
+    end
+    object mtGridArray: TSmallintField
+      FieldName = 'Array'
+    end
+    object mtGridCharSet: TStringField
+      FieldName = 'CharSet'
+      Size = 31
+    end
+    object mtGridCollate: TStringField
+      FieldName = 'Collate'
+      Size = 31
+    end
+    object mtGridChavePrimaria: TStringField
+      DisplayLabel = 'Chave Prim'#225'ria?'
+      FieldName = 'ChavePrimaria'
+      Size = 3
+    end
+    object mtGridNotNull: TStringField
+      DisplayLabel = 'Not Null'
+      FieldName = 'NotNull'
+      Size = 3
+    end
+    object mtGridDefault: TStringField
+      FieldName = 'Default'
+      Size = 80
+    end
+    object mtGridComputedBy: TStringField
+      DisplayLabel = 'Computed By'
+      FieldName = 'ComputedBy'
+      Size = 255
+    end
+    object mtGridCheck: TStringField
+      FieldName = 'Check'
+      Size = 80
+    end
+  end
+  object BindSourceDBGrid: TBindSourceDB
+    DataSet = mtGrid
+    ScopeMappings = <>
+    Left = 33
+    Top = 292
+  end
+  object BindingsList: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 4
+    Top = 292
+    object LinkGridToDataSourceBindSourceDBGrid: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBGrid
+      GridControl = Grid
+      Columns = <
+        item
+          MemberName = 'ID'
+          Visible = False
+        end
+        item
+          MemberName = 'Coluna'
+        end
+        item
+          MemberName = 'TipoDado'
+        end
+        item
+          MemberName = 'Tamanho'
+        end
+        item
+          MemberName = 'Escala'
+        end
+        item
+          MemberName = 'Subtipo'
+        end
+        item
+          MemberName = 'Segmento'
+        end
+        item
+          MemberName = 'Array'
+        end
+        item
+          MemberName = 'CharSet'
+        end
+        item
+          MemberName = 'Collate'
+        end
+        item
+          MemberName = 'ChavePrimaria'
+        end
+        item
+          MemberName = 'NotNull'
+        end
+        item
+          MemberName = 'Default'
+        end
+        item
+          MemberName = 'ComputedBy'
+        end
+        item
+          MemberName = 'Check'
+        end>
+    end
+  end
+end

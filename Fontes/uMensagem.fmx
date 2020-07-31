@@ -1,0 +1,29 @@
+object fMensagem: TfMensagem
+  Left = 0
+  Top = 0
+  BorderStyle = Single
+  Caption = 'Mensagem'
+  ClientHeight = 40
+  ClientWidth = 200
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object Timer: TTimer
+    Interval = 500
+    OnTimer = TimerTimer
+    Left = 3
+    Top = 6
+  end
+  object Memo: TMemo
+    Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+    Align = Client
+    Size.Width = 200.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+  end
+end

@@ -1,0 +1,205 @@
+inherited fFuncao: TfFuncao
+  Caption = 'Consultar Fun'#231#245'es'
+  ClientHeight = 200
+  Position = ScreenCenter
+  DesignerMasterStyle = 0
+  object pnlSuperior: TPanel
+    Align = Top
+    Position.Y = 25.000000000000000000
+    Size.Width = 568.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    object lbMetadado: TLabel
+      Position.X = 10.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 527.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = '<Metadado>'
+    end
+  end
+  object pnlInferior: TPanel
+    Align = Bottom
+    Margins.Top = 2.000000000000000000
+    Position.Y = 178.000000000000000000
+    Size.Width = 568.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object BindNavigator: TBindNavigator
+      Align = Right
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 426.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 140.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      DataSource = BindSourceDBDados
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      xRadius = 4.000000000000000000
+      yRadius = 4.000000000000000000
+    end
+  end
+  object pnlCentral: TPanel
+    Align = Client
+    Size.Width = 568.000000000000000000
+    Size.Height = 108.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    object TabControl: TTabControl
+      Align = Client
+      Size.Width = 568.000000000000000000
+      Size.Height = 108.000000000000000000
+      Size.PlatformDefault = False
+      TabIndex = 0
+      TabOrder = 2
+      TabPosition = PlatformDefault
+      object tabLista: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = True
+        Size.Width = 43.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Lista'
+        object grdDados: TGrid
+          Align = Client
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 564.000000000000000000
+          Size.Height = 80.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          RowCount = 100
+          RowHeight = 18.000000000000000000
+          StyledSettings = [Family, Style, FontColor]
+        end
+      end
+      object tabDDL: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 43.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'DDL'
+        object MemoDDL: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          Align = Client
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 564.000000000000000000
+          Size.Height = 80.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          ReadOnly = True
+        end
+      end
+    end
+  end
+  object Splitter1: TSplitter
+    Align = Top
+    Cursor = crVSplit
+    MinSize = 20.000000000000000000
+    Position.Y = 65.000000000000000000
+    Size.Width = 568.000000000000000000
+    Size.Height = 3.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object ToolBar: TToolBar
+    Align = MostTop
+    Size.Width = 568.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 10
+    object btnSair: TButton
+      Align = Left
+      CanFocus = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Sair'
+      OnClick = btnSairClick
+    end
+    object btnRegistrar: TButton
+      Align = Left
+      CanFocus = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 84.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Registrar'
+      OnClick = btnRegistrarClick
+    end
+  end
+  object BindingsList: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 4
+    Top = 134
+    object LinkGridToDataSourceBindSourceDBDados: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBDados
+      GridControl = grdDados
+      Columns = <>
+    end
+    object LinkPropertyToFieldText: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBDados
+      FieldName = 'function_name'
+      Component = lbMetadado
+      ComponentProperty = 'Text'
+    end
+  end
+  object cdsFuncoes: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 62
+    Top = 134
+    object cdsFuncoesfunction_name: TStringField
+      DisplayLabel = 'Fun'#231#227'o'
+      FieldName = 'function_name'
+      Size = 31
+    end
+    object cdsFuncoesentrypoint: TStringField
+      DisplayLabel = 'Ponto de Entrada'
+      FieldName = 'entrypoint'
+      Size = 31
+    end
+    object cdsFuncoesmodule_name: TStringField
+      DisplayLabel = 'M'#243'dulo'
+      FieldName = 'module_name'
+      Size = 253
+    end
+  end
+  object BindSourceDBDados: TBindSourceDB
+    DataSet = cdsFuncoes
+    ScopeMappings = <>
+    Left = 33
+    Top = 134
+  end
+end

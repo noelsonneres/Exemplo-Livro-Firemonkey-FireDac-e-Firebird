@@ -1,0 +1,209 @@
+inherited fExcecao: TfExcecao
+  Caption = 'Consultar Exce'#231#245'es'
+  ClientHeight = 200
+  Position = ScreenCenter
+  DesignerMasterStyle = 0
+  object pnlSuperior: TPanel
+    Align = Top
+    Position.Y = 25.000000000000000000
+    Size.Width = 568.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lbMetadado: TLabel
+      Position.X = 10.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 527.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = '<Metadado>'
+    end
+  end
+  object pnlInferior: TPanel
+    Align = Bottom
+    Margins.Top = 2.000000000000000000
+    Position.Y = 178.000000000000000000
+    Size.Width = 568.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    TabStop = False
+    object BindNavigator: TBindNavigator
+      Align = Right
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Right = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 426.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 140.000000000000000000
+      Size.Height = 18.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      TabStop = False
+      DataSource = BindSourceDBDados
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      xRadius = 4.000000000000000000
+      yRadius = 4.000000000000000000
+    end
+  end
+  object pnlCentral: TPanel
+    Align = Client
+    Size.Width = 568.000000000000000000
+    Size.Height = 108.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    TabStop = False
+    object TabControl: TTabControl
+      Align = Client
+      Size.Width = 568.000000000000000000
+      Size.Height = 108.000000000000000000
+      Size.PlatformDefault = False
+      TabIndex = 0
+      TabOrder = 2
+      TabStop = False
+      TabPosition = PlatformDefault
+      object tabLista: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = True
+        Size.Width = 43.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        TabStop = False
+        Text = 'Lista'
+        object grdDados: TGrid
+          Align = Client
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 564.000000000000000000
+          Size.Height = 80.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          RowCount = 100
+          RowHeight = 18.000000000000000000
+          StyledSettings = [Family, Style, FontColor]
+        end
+      end
+      object tabDDL: TTabItem
+        CustomIcon = <
+          item
+          end>
+        IsSelected = False
+        Size.Width = 43.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        TabStop = False
+        Text = 'DDL'
+        object MemoDDL: TMemo
+          Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+          Align = Client
+          Margins.Left = 2.000000000000000000
+          Margins.Top = 2.000000000000000000
+          Margins.Right = 2.000000000000000000
+          Margins.Bottom = 2.000000000000000000
+          Size.Width = 564.000000000000000000
+          Size.Height = 80.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+          ReadOnly = True
+        end
+      end
+    end
+  end
+  object Splitter: TSplitter
+    Align = Top
+    Cursor = crVSplit
+    MinSize = 20.000000000000000000
+    Position.Y = 65.000000000000000000
+    Size.Width = 568.000000000000000000
+    Size.Height = 3.000000000000000000
+    Size.PlatformDefault = False
+  end
+  object ToolBar: TToolBar
+    Align = MostTop
+    Size.Width = 568.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 9
+    TabStop = False
+    object btnSair: TButton
+      Align = Left
+      CanFocus = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 2.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      TabStop = False
+      Text = 'Sair'
+      OnClick = btnSairClick
+    end
+    object btnCriar: TButton
+      Align = Left
+      CanFocus = False
+      Margins.Left = 2.000000000000000000
+      Margins.Top = 2.000000000000000000
+      Margins.Bottom = 2.000000000000000000
+      Position.X = 84.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 80.000000000000000000
+      Size.Height = 21.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      TabStop = False
+      Text = 'Criar'
+      OnClick = btnCriarClick
+    end
+  end
+  object BindingsList: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 4
+    Top = 135
+    object LinkGridToDataSourceBindSourceDBDados: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBDados
+      GridControl = grdDados
+      Columns = <>
+    end
+    object LinkPropertyToFieldText: TLinkPropertyToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDBDados
+      FieldName = 'exception_name'
+      Component = lbMetadado
+      ComponentProperty = 'Text'
+    end
+  end
+  object cdsExcecoes: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    Left = 62
+    Top = 135
+    object cdsExcecoesexception_name: TStringField
+      DisplayLabel = 'Exce'#231#227'o'
+      FieldName = 'exception_name'
+      Size = 31
+    end
+    object cdsExcecoesmessage: TStringField
+      DisplayLabel = 'Mensagem'
+      FieldName = 'message'
+      Size = 78
+    end
+  end
+  object BindSourceDBDados: TBindSourceDB
+    DataSet = cdsExcecoes
+    ScopeMappings = <>
+    Left = 33
+    Top = 135
+  end
+end
